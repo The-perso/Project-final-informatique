@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Cultural Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../language.js"></script>
+</head>
+
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen">
+        <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Institution Logo" class="logo institution-logo">
+        <h1 class="welcome-title">Welcome to the Environmental Cultural Quiz</h1>
+        <p class="welcome-subtitle">Organized by the Environmental Club of Allal Bin Abdullah Institution</p>
+        <form id="user-info-form" class="welcome-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="text" id="school" placeholder="School Name" required>
+            <p class="welcome-note">Note: You must enter all information to start the quiz.</p>
+            <button type="submit" class="welcome-button">Start the Quiz</button>
+        </form>
+    </div>
+
+    <!-- Main Interface -->
+    <div id="main-menu" class="screen" style="display:none;">
+        <header class="main-header">
+            <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Institution Logo" class="logo institution-logo">
+        </header>
+        <nav class="main-nav">
+            <button onclick="showSection('home')" class="nav-button">Home</button>
+            <button onclick="showSection('training')" class="nav-button">Training Space</button>
+            <button onclick="showSection('about')" class="nav-button">About the Quiz</button>
+            <button onclick="showSection('participate')" class="nav-button">Participate in the Quiz</button>
+        </nav>
+        <div id="content" class="content-section">
+            <!-- Content changes based on the selected section -->
+        </div>
+
+        <!-- Developers Section (appears only on the main screen) -->
+        <div id="developers-section" class="developers-section" style="display: none;">
+            <h3 class="developers-title">Developers:</h3>
+            <p class="developer-name">Salman Al-Amarti</p>
+            <p class="developer-name">Riyad Boussifi</p>
+            <p class="developer-supervisor">Under the supervision of: <strong>Professor Anas Jroundi</strong></p>
+        </div>
+    </div>
+
+    <!-- Certificate of Appreciation -->
+    <div id="certificate" class="screen" style="display:none;">
+        <h1 class="certificate-title">Congratulations <span id="certificate-name"></span>!</h1>
+        <p class="certificate-message">You have successfully completed the quiz and ranked among the best!</p>
+        <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Institution Logo" class="logo institution-logo" style="height: 80px;">
+        <img src="https://i.postimg.cc/8CvJyQ6Z/environment-club-logo.png" alt="Environmental Club Logo" class="logo club-logo" style="height: 80px;">
+        <button onclick="downloadCertificate()" class="certificate-button">Download Certificate</button>
+        <button onclick="showWrongAnswers()" class="certificate-button">Show Wrong Answers</button>
+        <button onclick="showSection('home')" class="certificate-button">Back to Home Page</button>
+        <!-- Developers Section (appears only on the end page) -->
+        <div id="developers-section-end" class="developers-section">
+            <h3 class="developers-title">Developers:</h3>
+            <p class="developer-name">Salman Al-Amarti</p>
+            <p class="developer-supervisor">Under the supervision of: <strong>Professor Anas Jroundi</strong></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+<!-- Ce que j'ai ajouté -->
+
+    <!-- Bouton en bas à gauche -->
+    <button id="redirectButtonfrancais" class="bottom-left-button-francais">french</button>
+
+    <script src="script_bouton_francais.js"></script> <!-- Lien vers le fichier JavaScript francais-->
+
+    <!-- Bouton en bas à gauche -->
+    <button id="redirectButtonarabe" class="bottom-left-button-arabe">arabic</button>
+
+    <script src="script_bouton_arabe.js"></script> <!-- Lien vers le fichier JavaScript arabe-->
+
+    <!-- Bouton en bas à gauche -->
+    <button id="redirectButtonanglais" class="bottom-left-button-anglais">english</button>
+
+    <script src="script_bouton_anglais.js"></script> <!-- Lien vers le fichier JavaScript anglais-->
+
+<!-- fin de l'ajoux -->
+
+</body>
+
+</html>

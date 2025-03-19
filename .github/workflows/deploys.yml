@@ -1,0 +1,33 @@
+name: Deploy Custom Folder to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Branche à surveiller pour les modifications
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Environnement d'exécution
+
+    steps:
+      # Étape 1 : Récupérer le code du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Étape 2 : Installer les dépendances (si nécessaire)
+      - name: Install dependencies
+        run: |
+          npm install  # Exemple pour un projet Node.js
+
+      # Étape 3 : Construire le projet (si nécessaire)
+      - name: Build project
+        run: |
+          npm run build  # Exemple pour générer des fichiers statiques
+
+      # Étape 4 : Déployer sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./anglais  # Dossier personnalisé contenant vos fichiers
+          publish_branch: gh-pages  # Branche utilisée pour le déploiement
